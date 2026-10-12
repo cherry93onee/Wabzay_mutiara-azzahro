@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mutiara Azzahro</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffb6c8">
+  <meta name="description" content="Portofolio pribadi Mutiara Azzahro — creative student, photography, and illustration.">
+  <title>Mutiara Azzahro | Amai mono^^</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navigasi utama">
+      <a class="logo" href="index.html" aria-label="Amai mono, halaman utama">
+        <span class="logo-sparkle" aria-hidden="true">✧</span>
+        <span>Amai mono<span class="logo-face">^^</span></span>
+      </a>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Amai mono^^</div>
+      <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
 
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="hobby.html">Contact</a></li>
-                
-            </ul>
-        </nav>
-        <hr>
-    </header>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link active" href="index.html"><span aria-hidden="true">⌂</span> Home</a></li>
+        <li><a class="nav-link" href="about.html"><span aria-hidden="true">♙</span> About Me</a></li>
+        <li><a class="nav-link" href="hobby.html"><span aria-hidden="true">✉</span> Contact</a></li>
+      </ul>
+      <span class="nav-heart" aria-hidden="true">♡</span>
+    </nav>
+  </header>
 
-    <!-- HERO / HOME -->
-    <section class="hero">
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Hi, I'm Mutiara <span class="hello-heart" aria-hidden="true">♡</span></p>
+        <h1 id="hero-title">Mutiara Azzahro</h1>
+        <div class="title-underline" aria-hidden="true"></div>
 
-        <!-- Bagian kiri -->
-        <div class="hero-text">
+        <p class="description">
+          Saya adalah seorang siswi yang berasal dari sekolah
+          <strong>SMKN 5 Kabupaten Tangerang</strong>, dan kini menduduki kelas
+          <strong>10-RPL 01</strong>. Saya memiliki cita-cita menjadi seorang
+          <strong>Design Technology / Designer Baju</strong> ^^
+        </p>
 
-            <p class="small-text">Hi, I'm Mutiara</p>
+        <p class="japanese-greeting">
+          <span class="greeting-flower" aria-hidden="true">✿</span>
+          <span>皆さん、こんにちは！私の名前はムティアラ・アッザーロです。よろしくお願いします！</span>
+          <span class="greeting-sparkle" aria-hidden="true">✦</span>
+        </p>
 
-            <h1>
-                Mutiara Azzahro
-            </h1>
-
-            <div class="line"></div>
-
-            <p class="description">
-                Saya adalah seorang siswi yang berasal dari sekolah "SMKN 5 Kabupaten Tangerang,
-                dan kini menduduki kelas 10-RPL 01. <br>
-                
-
-                Saya memiliki cita-cita menjadi seorang Design Tecnology/ Designer Baju ^^
-
-            </p>
-            <p class="text">
-                皆さん、こんにちは！
-                私の名前はムティアラ・アッザーロです。よろしくお願いします！
-            </p>
+        <div class="skill-tags" aria-label="Minat dan keterampilan">
+          <span class="skill-tag pink"><span aria-hidden="true">❀</span> Creative Student</span>
+          <span class="skill-tag green"><span aria-hidden="true">▣</span> Photography</span>
+          <span class="skill-tag pink"><span aria-hidden="true">✎</span> Illustration</span>
         </div>
+      </div>
 
-        <!-- Bagian kanan -->
-        <div class="hero-image">
+      <div class="hero-visual">
+        <span class="decor decor-heart" aria-hidden="true">♡</span>
+        <span class="decor decor-star" aria-hidden="true">☆</span>
+        <span class="decor decor-rays" aria-hidden="true">〰</span>
 
-            <div class="image-circle">
-                <img
-    src="https://i.ibb.co/SDVQgXSk/Circular-Classroom-Conversation-1.png"
-    alt="Circular-Classroom-Conversation-1"
-    referrerpolicy="no-referrer"
->
-            </div>
-
-            <p class="image-caption">
-                <span>♡</span> Sekertaris Kelas
-            </p>
-
+        <div class="portrait-frame">
+          <div class="portrait-inner">
+            <!-- Pastikan foto berada di images/foto-profil.png -->
+            <img src="images/foto-profil.png" alt="Foto kegiatan Mutiara di kelas"
+                 onerror="this.onerror=null;this.src='https://i.ibb.co/SDVQgXSk/Circular-Classroom-Conversation-1.png';">
+          </div>
         </div>
-
+        <div class="role-label"><span aria-hidden="true">♥</span> Sekertaris Kelas</div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-      <hr>
-       <p>&copy; 2026 by mutiara</p>
-    </footer>
+  <footer class="site-footer">
+    <p>© 2026 by Mutiara <span aria-hidden="true">♡</span></p>
+  </footer>
 
+  <script>
+    // Menu mobile: buka/tutup tanpa mengubah navigasi desktop.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Buka menu');
+      });
+    });
+  </script>
 </body>
 </html>
