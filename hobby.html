@@ -11,47 +11,133 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Amai mono^^</div>
+  <!-- NAVBAR: disamakan dengan halaman Home -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navigasi utama">
+      <a class="logo" href="index.html" aria-label="Amai mono, halaman utama">
+        <span class="logo-sparkle" aria-hidden="true">✧</span>
+        <span>Amai mono<span class="logo-face">^^</span></span>
+      </a>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#">Contact</a></li>
-                
-            </ul>
-        </nav>
-        <hr>
-    </header>
+      <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
 
-<body>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span> Home</a></li>
+        <li><a class="nav-link active" href="about.html"><span aria-hidden="true">♙</span> About Me</a></li>
+        <li><a class="nav-link" href="hobby.html"><span aria-hidden="true">✉</span> Contact</a></li>
+      </ul>
+      <span class="nav-heart" aria-hidden="true">♡</span>
+    </nav>
+  </header>
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
 
-    <section class="hero">
+    <h2 class="projects-title">About Me?</h2>
 
-        <!-- BAGIAN TEKS -->
-        <div class="hero-text">
+    <div class="projects-container">
 
-            <h1>Konnichiwa Minna~</h1>
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <h3>Pengalaman</h3>
 
             <p>
-                Jika ada kesalahan dalam website ini/ anda ingin mengajukan sebuah pertanyaan mengenai <br> 
-                Website ini....silahkan hubungi nomor dibawah ini!
+                Saya pernah mengikuti berbagai perlombaan yang saya minati,
+                seperti Lomba membuat poster, Lomba Resensi Buku, Jambore Sanitasi, Photography,
+                and Lomba mapel indonesia.
             </p>
 
-            <a href="https://wa.me/Mutiara_san?s=t  " class="btn">
-                0877-1051-5872
-            </a>
+            <p class="tools">
+                <strong>Skill:</strong> 
+            </p>
 
+            <p>
+                Lenguage (Japanese,Chinese, English, and Indonesia), Art Coloring, Photography,
+                Videography, Basic HTML, and 
+            </p>
+
+            <a href="https://www.instagram.com/art_zahro_san?vrfl=a3F5Nm5mZWl3MDF2" class="project-btn">@art_zahro_san</a>
         </div>
 
-    </section>
 
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <h3>Favorite</h3>
+
+            <p>
+               Aku suka menggambar, membuat novel, membaca buku, mendengar music,
+               dan aku sangat tertarik pada hal yang belum pernah kucoba.
+            </p>
+
+            <p class="tools">
+                <strong>Music:</strong> 
+            </p>
+
+            <p>
+               ^ Shape of my heart [ Backstreet Boys ] <br>
+               ^ Somebody's Pleasure [ Aziz Hedra ] <br>
+               ^ What if i can [ Alex Crichton ]
+            </p>
+
+             <p class="tools">
+                <strong>Favorite Color:</strong> 
+            </p>
+
+            <p>
+                ^ Green <br>
+                ^ Pink <br>
+                ^ Blue <br>
+                ^ white
+            </p>
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <h3>My Biodata</h3>
+
+            <p>
+              Saya adalah seseorang yang memiliki rasa ingin yang begitu kuat, serta 
+              orang-orang selalu menyebut saya sebagai anak yang Active, Ceria, mau berusaha,
+              dan bahkan ada yang bilang sifat saya sebagai seorang perempuan itu...berbeda dengan 
+              perembuan pada umumnya hehe^^.
+
+            </p>
+
+           
+        </div>
+
+    </div>
+
+</section>
+
+  
     <footer>
       <hr>
        <p>&copy; 2026 by mutiara</p>
     </footer>
+
+
+  <script>
+    // Menu mobile konsisten dengan halaman Home.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Buka menu');
+      });
+    });
+  </script>
 
 </body>
 </html>
