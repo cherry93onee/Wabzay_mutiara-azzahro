@@ -11,20 +11,26 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Amai mono^^</div>
+  <!-- NAVBAR: disamakan dengan halaman Home -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navigasi utama">
+      <a class="logo" href="index.html" aria-label="Amai mono, halaman utama">
+        <span class="logo-sparkle" aria-hidden="true">✧</span>
+        <span>Amai mono<span class="logo-face">^^</span></span>
+      </a>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="hobby.html">Contact</a></li>
-                
-            </ul>
-        </nav>
-        <hr>
-    </header>
+      <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span> Home</a></li>
+        <li><a class="nav-link active" href="about.html"><span aria-hidden="true">♙</span> About Me</a></li>
+        <li><a class="nav-link" href="hobby.html"><span aria-hidden="true">✉</span> Contact</a></li>
+      </ul>
+      <span class="nav-heart" aria-hidden="true">♡</span>
+    </nav>
+  </header>
 <!-- PROJECTS SECTION -->
 <section class="projects" id="projects">
 
@@ -69,7 +75,7 @@
             </p>
 
             <p>
-               ^ Shape of you  [ Backstreet Boys ] <br>
+               ^ Shape of my heart [ Backstreet Boys ] <br>
                ^ Somebody's Pleasure [ Aziz Hedra ] <br>
                ^ What if i can [ Alex Crichton ]
             </p>
@@ -111,6 +117,27 @@
       <hr>
        <p>&copy; 2026 by mutiara</p>
     </footer>
+
+
+  <script>
+    // Menu mobile konsisten dengan halaman Home.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Buka menu');
+      });
+    });
+  </script>
 
 </body>
 </html>
